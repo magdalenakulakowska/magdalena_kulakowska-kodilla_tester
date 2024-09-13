@@ -37,5 +37,18 @@ public class FirstClass {
         coolNotebook.checkPrice();
         coolNotebook.checkWeight();
         coolNotebook.checkPriceAndYear();
+
+        /* Grades */
+        Grades grades = new Grades();
+
+        grades.add(2);
+
+        System.out.println(grades.lastAddedGrade());
+
+        grades.add(1);
+
+        System.out.println(grades.lastAddedGrade());
+
+        System.out.println(grades.averageGrade());
     }
 }
