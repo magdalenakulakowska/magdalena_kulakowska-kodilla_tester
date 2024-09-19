@@ -9,7 +9,7 @@ public class Calculator {
         return a - b;
     }
 
-    public int squaring(int a) {
-        return (int) Math.pow(a, 2);
+    public double squaring(double a) {
+        return Math.pow(a, 2);
     }
 }

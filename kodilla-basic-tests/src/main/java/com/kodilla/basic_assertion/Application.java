@@ -23,8 +23,8 @@ public class Application {
             System.out.println("Subtract result is not correct for numbers: " + a + " and " + b);
         }
 
-        int squaringResult = calculator.squaring(a);
-        correct = ResultChecker.assertEquals(25, squaringResult);
+        double squaringResult = calculator.squaring(a);
+        correct = ResultChecker.assertEqualsDouble(25, squaringResult);
 
         if(correct){
             System.out.println("Squaring result is correct for numbers: " + a + " and " + b);
