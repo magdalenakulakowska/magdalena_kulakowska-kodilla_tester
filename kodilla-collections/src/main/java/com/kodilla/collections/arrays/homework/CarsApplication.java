@@ -1,7 +1,5 @@
 package com.kodilla.collections.arrays.homework;
 
-import com.kodilla.collections.arrays.ShapeUtils;
-import com.kodilla.collections.interfaces.Shape;
 import com.kodilla.collections.interfaces.homework.Car;
 import com.kodilla.collections.interfaces.homework.Ford;
 import com.kodilla.collections.interfaces.homework.Kia;
