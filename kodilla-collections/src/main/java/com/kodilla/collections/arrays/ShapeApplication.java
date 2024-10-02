@@ -23,11 +23,11 @@ public class ShapeApplication {
         Random random = new Random();
         int drawnShapeKind = random.nextInt(3);
         double a = getRandomSize(random);
-        if (drawnShapeKind == 0)
+        if (drawnShapeKind == 0) {
             return new Circle(a);
-        else if (drawnShapeKind == 1)
+        } else if (drawnShapeKind == 1) {
             return new Square(a);
-        else {
+        } else {
             double b = getRandomSize(random);
             double c = getRandomSize(random);
             return new Triangle(a, b, c);

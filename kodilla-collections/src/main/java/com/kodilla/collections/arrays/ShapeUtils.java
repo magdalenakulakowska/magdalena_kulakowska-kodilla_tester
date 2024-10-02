@@ -14,13 +14,13 @@ public class ShapeUtils {
     }
 
     private static String getShapeName(Shape shape) {
-        if (shape instanceof Circle)
+        if (shape instanceof Circle) {
             return "Circle";
-        else if (shape instanceof Triangle)
+        } else if (shape instanceof Triangle) {
             return "Triangle";
-        else if (shape instanceof Square)
+        } else if (shape instanceof Square) {
             return "Square";
-        else
+        } else
             return "Unknown shape name";
     }
 }
