@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class SchoolDirectory {
     public static void main(String[] args) {
-        Map<Principal, School> principals = new HashMap<>();
+        Map<Principal, School> schoolsDirectory = new HashMap<>();
 
         Principal adam = new Principal("Adam", "Jelionek");
         Principal anna = new Principal("Anna", "Jabłonowicz");
@@ -16,14 +16,14 @@ public class SchoolDirectory {
         School annaSchool = new School("Zielona szkoła", Arrays.asList(8, 12, 10, 11));
         School aleksanderSchool = new School("Szkoła muzyczna", Arrays.asList(5, 6, 4, 8, 6));
 
-        principals.put(adam, adamSchool);
-        principals.put(anna, annaSchool);
-        principals.put(aleksander, aleksanderSchool);
+        schoolsDirectory.put(adam, adamSchool);
+        schoolsDirectory.put(anna, annaSchool);
+        schoolsDirectory.put(aleksander, aleksanderSchool);
 
-        for(Map.Entry<Principal, School> principalEntry : principals.entrySet()){
-            System.out.println(principalEntry.getKey().getFirstName() + " " +
-                    principalEntry.getKey().getLastName() + " is principal of "
-                    + principalEntry.getValue().getSchoolName() + " school with " + principalEntry.getValue().getAllStudents() + " students. ");
+        for(Map.Entry<Principal, School> schoolDirectoryEntry : schoolsDirectory.entrySet()){
+            System.out.println(schoolDirectoryEntry.getKey().getFirstName() + " " +
+                    schoolDirectoryEntry.getKey().getLastName() + " is principal of "
+                    + schoolDirectoryEntry.getValue().getSchoolName() + " school with " + schoolDirectoryEntry.getValue().getAllStudents() + " students. ");
         }
     }
 }
