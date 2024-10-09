@@ -1,13 +1,10 @@
 package com.kodilla.collections.adv.exercises.homework;
 
-import com.kodilla.collections.adv.exercises.dictionary.EnglishWord;
-import com.kodilla.collections.adv.exercises.dictionary.PartOfSpeech;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.kodilla.collections.adv.exercises.homework.FlightRepository.getFlightsTable;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FlightFinderTestSuite {
