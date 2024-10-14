@@ -31,11 +31,7 @@ public class ForumStats {
                 .filter(user -> user.getAge() < 40)
                 .toList();
 
-        Optional<List<User>> optionalUsers = Optional.ofNullable(filteredUsers);
-
-        List<User> finalUsers = optionalUsers.orElse(List.of(new User("", 0, 0, "")));
-
-        return getAveragePosts(finalUsers);
+        return getAveragePosts(filteredUsers);
     }
 
     public static double getAveragePosts(List<User> users){
