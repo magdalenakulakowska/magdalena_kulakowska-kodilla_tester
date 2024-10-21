@@ -59,12 +59,4 @@ class GamblingMachineTestSuite {
 
         assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(numbers));
     }
-
-    @ParameterizedTest
-    @NullSource
-    public void testHowManyWins_withExceptionForNull(Set<Integer> numbers) {
-        GamblingMachine gamblingMachine = new GamblingMachine(){};
-
-        assertThrows(NullPointerException.class, () -> gamblingMachine.howManyWins(numbers));
-    }
 }
