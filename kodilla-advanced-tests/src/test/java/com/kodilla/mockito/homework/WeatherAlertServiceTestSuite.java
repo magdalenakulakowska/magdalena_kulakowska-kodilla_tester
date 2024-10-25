@@ -1,5 +1,6 @@
 package com.kodilla.mockito.homework;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -7,12 +8,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WeatherAlertServiceTestSuite {
 
-    WeatherAlertService weatherAlertService = new WeatherAlertService();
-    Person person = Mockito.mock(Person.class);
-    Person secondPerson = Mockito.mock(Person.class);
-    Person thirdPerson = Mockito.mock(Person.class);
-    Alert alert = Mockito.mock(Alert.class);
-    Notification notification = Mockito.mock(Notification.class);
+    WeatherAlertService weatherAlertService;
+    Person person;
+    Person secondPerson;
+    Person thirdPerson;
+    Alert alert;
+    Notification notification;
+
+    @BeforeEach
+    public void initializeService() {
+        weatherAlertService = new WeatherAlertService();
+        person = Mockito.mock(Person.class);
+        secondPerson = Mockito.mock(Person.class);
+        thirdPerson = Mockito.mock(Person.class);
+        alert = Mockito.mock(Alert.class);
+        notification = Mockito.mock(Notification.class);
+    }
 
     @Test
     public void notSubscribedPersonShouldNotReceiveAlertAboutLocation(){
