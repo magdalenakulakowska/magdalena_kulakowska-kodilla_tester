@@ -18,72 +18,42 @@ class CalculatorTestSuite {
     Calculator calculator;
 
     @Test
-    public void shouldAdd() {
+    public void shouldAddAndDisplay() {
         Double result = calculator.add(15.0, 13.0);
 
         assertEquals(28.0, result);
+        Mockito.verify(display).display(28.0);
     }
 
     @Test
-    public void shouldDisplayCorrectMessageForAdd() {
-        calculator.add(15.0,13.0);
-
-        Mockito.verify(display, Mockito.times(1)).display(28.0);
-    }
-
-    @Test
-    public void shoudSubtract() {
+    public void shoudSubtractAndDisplay() {
         Double result = calculator.subtract(15.0, 17.0);
 
         assertEquals(-2.0, result);
+        Mockito.verify(display).display(-2.0);
     }
 
     @Test
-    public void shouldDisplayCorrectMessageForSubtract() {
-        calculator.subtract(15.0,17.0);
-
-        Mockito.verify(display, Mockito.times(1)).display(-2.0);
-    }
-
-    @Test
-    public void shouldMultiply() {
+    public void shouldMultiplyAndDisplay() {
         Double result = calculator.multiply(2.0, 5.0);
 
         assertEquals(10.0, result);
+        Mockito.verify(display).display(10.0);
     }
 
     @Test
-    public void shouldDisplayCorrectMessageForMultiply() {
-        calculator.multiply(2.0,5.0);
-
-        Mockito.verify(display, Mockito.times(1)).display(10.0);
-    }
-
-    @Test
-    public void shouldDivide() {
+    public void shouldDivideAndDisplay() {
         Double result = calculator.divide(10.0, -5.0);
 
         assertEquals(-2.0, result);
+        Mockito.verify(display).display(-2.0);
     }
 
     @Test
-    public void shouldDisplayCorrectMessageForDivide() {
-        calculator.divide(10.0,-5.0);
-
-        Mockito.verify(display, Mockito.times(1)).display(-2.0);
-    }
-
-    @Test
-    public void shouldNotDivideByZero() {
+    public void shouldNotDivideByZeroAndShouldNotDisplayMessageFromDisplayComponent() {
         Double result = calculator.divide(10.0, 0.0);
 
         assertEquals(0.0, result);
-    }
-
-    @Test
-    public void shouldNotDisplayMessageFromDisplayComponent() {
-        calculator.divide(10.0, 0.0);
-
         Mockito.verify(display, Mockito.never()).display(0.0);
     }
 }
