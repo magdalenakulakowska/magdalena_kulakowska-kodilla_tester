@@ -17,14 +17,8 @@ class CalculatorTestSuite {
     @MockBean
     Display display;
 
-    ApplicationContext context;
+    @Autowired
     Calculator calculator;
-
-    @BeforeEach
-    public void initialize() {
-        context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_dependency_injection");
-        calculator = context.getBean(Calculator.class);
-    }
 
     @Test
     public void shouldAddAndDisplay() {
