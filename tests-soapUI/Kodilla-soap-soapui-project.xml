@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:soapui-project id="e88cf2e3-5729-437a-81c5-305d74035bc7" activeEnvironment="Default" name="Kodilla soap"
-                    resourceRoot="" soapui-version="5.7.2" xmlns:con="http://eviware.com/soapui/config">
+                    resourceRoot="" soapui-version="5.7.2" abortOnError="false" runType="SEQUENTIAL"
+                    xmlns:con="http://eviware.com/soapui/config">
     <con:settings/>
     <con:interface xsi:type="con:WsdlInterface" id="a44a7c65-b7e6-4990-889d-6f10c6fb4286" wsaVersion="NONE"
                    name="CoursesPortSoap11" type="wsdl" bindingName="{http://kodilla.com/courses/soap}CoursesPortSoap11"
@@ -146,6 +147,138 @@
                 </con:config>
             </con:testStep>
             <con:properties/>
+            <con:securityTest id="5a6de7c6-9483-407e-ad8b-36dc8767407f" name="Not existing course Security Test"
+                              failOnError="true">
+                <con:settings/>
+                <con:testStepSecurityTest>
+                    <con:testStepId>b83cdeec-375c-412e-bf1d-9f7940beb1ba</con:testStepId>
+                    <con:testStepSecurityScan type="InvalidTypesSecurityScan" name="Invalid Types"
+                                              id="04f5c605-33b8-4718-9a5a-b0b24fb3866d" applyForFailedStep="false"
+                                              disabled="false" runOnlyOnce="true">
+                        <con:settings/>
+                        <con:config xsi:type="con:InvalidSecurityScan"
+                                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <con:typesList>
+                                <con:type>3</con:type>
+                                <con:value>true</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>4</con:type>
+                                <con:value>GpM7</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>5</con:type>
+                                <con:value>0FB7</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>9</con:type>
+                                <con:value>-1E4f</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>10</con:type>
+                                <con:value>12.45E+12</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>11</con:type>
+                                <con:value>-1.23</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>12</con:type>
+                                <con:value>SoapUI is the&#13; best
+                                </con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>13</con:type>
+                                <con:value>P1Y2M3DT10H30M12.3S</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>14</con:type>
+                                <con:value>1999-05-31T13:20:00.000-05:00</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>16</con:type>
+                                <con:value>1999-05-31</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>22</con:type>
+                                <con:value>-1267896799</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>23</con:type>
+                                <con:value>-882223334991111111</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>24</con:type>
+                                <con:value>-2147483647</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>25</con:type>
+                                <con:value>-32768</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>26</con:type>
+                                <con:value>127</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>27</con:type>
+                                <con:value>0</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>28</con:type>
+                                <con:value>-1</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>29</con:type>
+                                <con:value>1</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>30</con:type>
+                                <con:value>1267896799</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>31</con:type>
+                                <con:value>882223334991111111</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>32</con:type>
+                                <con:value>294967295</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>33</con:type>
+                                <con:value>65535</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>34</con:type>
+                                <con:value>255</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>35</con:type>
+                                <con:value>SoapUI is the best</con:value>
+                            </con:typesList>
+                            <con:typesList>
+                                <con:type>36</con:type>
+                                <con:value>SoapUI is the best</con:value>
+                            </con:typesList>
+                        </con:config>
+                        <con:assertion type="Sensitive Information Exposure" id="6fec653c-bd4d-4edb-bab3-f113c35741f1"
+                                       name="Sensitive Information Exposure">
+                            <con:configuration>
+                                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                                <IncludeGlobal>true</IncludeGlobal>
+                            </con:configuration>
+                        </con:assertion>
+                        <con:testStep xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                        <con:checkedParameters xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <con:parameters label="name" parameterName="Request" xpath="//*:name" checked="true"/>
+                        </con:checkedParameters>
+                        <con:executionStrategy xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <con:strategy>ONE_BY_ONE</con:strategy>
+                            <con:delay>100</con:delay>
+                        </con:executionStrategy>
+                    </con:testStepSecurityScan>
+                </con:testStepSecurityTest>
+                <con:properties/>
+            </con:securityTest>
         </con:testCase>
         <con:testCase id="75718e3b-8e4e-45a6-95c2-4b9b81564b35" failOnError="true" failTestCaseOnErrors="true"
                       keepSession="false" maxResults="0" name="Course 9 months length TestCase" searchProperties="true">
