@@ -27,6 +27,11 @@ public class WalletSteps {
         assertEquals(30, cashSlot.getContents());
     }
 
+    @Then("the balance of my wallet should be $170")
+    public void the_balance_of_my_wallet_should_be_$170() {
+        assertEquals(170,  wallet.getBalance(), "Incorrect wallet balance");
+    }
+
     @Given("I have deposited $50 in my wallet")
     public void i_have_deposited_$50_in_my_wallet() {
         wallet.deposit(50);
@@ -108,5 +113,38 @@ public class WalletSteps {
     public void no_money_should_be_dispensed_when_wallet_is_empty() {
         assertEquals(0, cashSlot.getContents());
         assertEquals(0, wallet.getBalance());
+    }
+
+    @Given("there is $100 in my wallet")
+    public void there_is_$100_in_my_wallet() {
+        wallet.deposit(100);
+        assertEquals(100, wallet.getBalance());
+    }
+
+    @When("I withdraw $200")
+    public void i_withdraw_$200() {
+        cashier.withdraw(wallet, 200);
+    }
+
+    @Then("nothing should be dispensed")
+    public void nothing_should_be_dispensed() {
+        assertEquals(0, cashSlot.getContents());
+        assertEquals(100, wallet.getBalance());
+    }
+
+    @Then("I should be told that I don't have enough money in my wallet")
+    public void i_should_be_told_that_i_dont_have_enough_money_in_my_wallet() {
+        String expected = "You don't have enough money in your wallet";
+        assertEquals(expected, cashier.getMessage());
+    }
+
+    @When("I check the balance of my wallet")
+    public void i_check_the_balance_of_my_wallet() {
+        wallet.getBalance();
+    }
+
+    @Then("I should see that the balance is $100")
+    public void i_should_see_that_balance_is_$100() {
+        assertEquals(100, wallet.getBalance());
     }
 }

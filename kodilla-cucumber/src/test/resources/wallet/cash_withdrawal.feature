@@ -3,6 +3,7 @@ Feature: Cash withdrawal
     Given I have deposited $200 in my wallet
     When I request $30
     Then $30 should be dispensed
+    And the balance of my wallet should be $170
   Scenario: Withdrawal of the exact wallet balance
     Given I have deposited $50 in my wallet
     When I request $50
