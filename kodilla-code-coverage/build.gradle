@@ -40,6 +40,7 @@ spotbugsTest {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation group: 'com.mysql', name: 'mysql-connector-j', version: '9.1.0'
 }
 
 test {
