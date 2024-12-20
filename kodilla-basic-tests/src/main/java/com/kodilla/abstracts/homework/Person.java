@@ -13,7 +13,9 @@ public class Person {
         this.job = job;
     }
 
-    public void displayResponsibilities (){
+    public String displayResponsibilities (){
         System.out.println(this.firstName + " responsibilities are: " + Arrays.toString(this.job.getResponsibilities()));
+
+        return this.firstName + " responsibilities are: " + Arrays.toString(this.job.getResponsibilities());
     }
 }

@@ -12,7 +12,7 @@ public class InterfacesDemo {
         showShapeDetails(triangle);
     }
 
-    private static void showShapeDetails(Shape shape) {
+    public static void showShapeDetails(Shape shape) {
         System.out.println(shape.getArea());
         System.out.println(shape.getPerimeter());
     }

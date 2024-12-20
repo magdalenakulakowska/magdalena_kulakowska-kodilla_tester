@@ -9,16 +9,20 @@ public class Square extends Shape{
     }
 
     @Override
-    public void getArea() {
+    public double getArea() {
         double area = a * a;
 
         System.out.println("Square area: " + area);
+
+        return area;
     }
 
     @Override
-    public void getPerimeter() {
+    public double getPerimeter() {
         double perimeter = 4 * a;
 
         System.out.println("Square perimeter: " + perimeter);
+
+        return perimeter;
     }
 }

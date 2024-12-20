@@ -55,7 +55,8 @@ class DbManagerTestSuite {
     @Test
     void testSelectUsersAndPosts() throws SQLException{
         //Given
-        String countQuery = "SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) FROM USERS U JOIN POSTS P ON U.ID = P.USER_ID GROUP BY U.ID HAVING COUNT(*) >= 2";
+        String countQuery = "SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) FROM USERS U " +
+                "JOIN POSTS P ON U.ID = P.USER_ID GROUP BY U.ID HAVING COUNT(*) >= 2";
         Statement statement = createStatement();
         ResultSet rs = statement.executeQuery(countQuery);
         int count = getPostsRowsCount(rs);

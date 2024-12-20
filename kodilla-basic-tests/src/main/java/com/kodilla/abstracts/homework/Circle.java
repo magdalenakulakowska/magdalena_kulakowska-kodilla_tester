@@ -1,7 +1,6 @@
 package com.kodilla.abstracts.homework;
 
 public class Circle extends Shape{
-    static final double PI = 3.1415927;
     private double r;
 
     public Circle (double r) {
@@ -11,16 +10,20 @@ public class Circle extends Shape{
     }
 
     @Override
-    public void getArea() {
-        double area = PI * r * r;
+    public double getArea() {
+        double area = Math.PI * r * r;
 
         System.out.println("Circle area: " + area);
+
+        return area;
     }
 
     @Override
-    public void getPerimeter() {
-        double perimeter = 2 * PI *r;
+    public double getPerimeter() {
+        double perimeter = 2 * Math.PI *r;
 
         System.out.println("Circle perimeter: " + perimeter);
+
+        return perimeter;
     }
 }

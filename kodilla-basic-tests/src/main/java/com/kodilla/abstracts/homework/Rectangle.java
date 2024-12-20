@@ -11,16 +11,20 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    public void getArea() {
+    public double getArea() {
         double area = a * b;
 
         System.out.println("Square area: " + area);
+
+        return area;
     }
 
     @Override
-    public void getPerimeter() {
+    public double getPerimeter() {
         double perimeter = 2 * a + 2 * b;
 
         System.out.println("Square perimeter: " + perimeter);
+
+        return perimeter;
     }
 }
